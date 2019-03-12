@@ -5,7 +5,7 @@ import Board.Map;
 import java.util.Scanner;
 
 public class Runner {
-    public static Map[][] layOut;
+    public static Map[][] layOut = null;
     boolean gameOn = true;
     boolean fight = false;
     boolean run = false;
@@ -20,8 +20,46 @@ public class Runner {
             System.out.println("Do you want a small, medium, or a large board? Remember the larger the board the more difficult.");
 
             String answer = in.nextLine();
+            if(answer.toLowerCase().contains("small"))
+            {
+                layOut = new layOut[4][4];
+                pChoice = true;
 
+            }
+            if(answer.toLowerCase().contains("medium"))
+            {
+                layOut = new layOut[5][5];
+                pChoice = true;
+            }
+            if(answer.toLowerCase().contains("large"))
+            {
+                layOut = new layOut[6][6];
+                pChoice = true;
+            }
         }
+
+        pChoice = true;
+        while(pChoice == true)
+        {
+            System.out.println("Choose a difficulty easy, medium, or hard?");
+            String answer = in.nextLine();
+            if(answer.toLowerCase().contains("easy"))
+            {
+                System.out.println("Easy it is.");
+                pChoice = false;
+            }
+            if(answer.toLowerCase().contains("medium"))
+            {
+                System.out.println("Medium it is.");
+                pChoice = false;
+            }
+            if(answer.toLowerCase().contains("hard"))
+            {
+                System.out.println("Hard it is");
+                pChoice = false;
+            }
+        }
+
 
     }
 }
