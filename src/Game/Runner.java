@@ -1,6 +1,7 @@
 package Game;
 
 import Board.Map;
+import People.Player;
 
 import java.util.Scanner;
 
@@ -60,6 +61,19 @@ public class Runner {
             }
         }
 
+    }
 
+    public static boolean validMove(String move, Player p, Map[][] layout )
+    {
+        move = move.toLowerCase().trim();
+        switch (move) {
+            case "n";
+            if(p.getxLoc() > 0)
+            {
+                layOut[p.getxLoc()][p.getyLoc()].leaveRoom(p);
+                layOut[p.getxLoc()-1][p.getyLoc()].enterRoom(p);
+                return true;
+            }
+        }
     }
 }
