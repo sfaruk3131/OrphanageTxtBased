@@ -38,7 +38,7 @@ public class Runner {
                 pChoice = true;
             }
         }
-
+        int eSpawn = 0;
         pChoice = true;
         while(pChoice == true)
         {
@@ -47,33 +47,29 @@ public class Runner {
             if(answer.toLowerCase().contains("easy"))
             {
                 System.out.println("Easy it is.");
+                eSpawn = 2;
                 pChoice = false;
             }
             if(answer.toLowerCase().contains("medium"))
             {
                 System.out.println("Medium it is.");
+                eSpawn = 3;
                 pChoice = false;
             }
             if(answer.toLowerCase().contains("hard"))
             {
                 System.out.println("Hard it is");
+                eSpawn = 4;
                 pChoice = false;
             }
         }
+        System.out.println("In order to move type in n,s,e,w for North,South,East ,and West respectively");
 
-    }
+        public static boolean validMove(int xLoc, int yLoc)
+        {
 
-    public static boolean validMove(String move, Player p, Map[][] layout )
-    {
-        move = move.toLowerCase().trim();
-        switch (move) {
-            case "n";
-            if(p.getxLoc() > 0)
-            {
-                layOut[p.getxLoc()][p.getyLoc()].leaveRoom(p);
-                layOut[p.getxLoc()-1][p.getyLoc()].enterRoom(p);
-                return true;
-            }
         }
+
     }
+
 }
