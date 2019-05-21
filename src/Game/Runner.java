@@ -6,7 +6,7 @@ import People.Player;
 import java.util.Scanner;
 
 public class Runner {
-    public static Map[][] layOut = null;
+    public static Map[][] layOut;
     boolean gameOn = true;
     boolean fight = false;
     boolean run = false;
@@ -65,10 +65,6 @@ public class Runner {
         }
         System.out.println("In order to move type in n,s,e,w for North,South,East ,and West respectively");
 
-        public static boolean validMove(int xLoc, int yLoc)
-        {
-
-        }
 
     }
 
