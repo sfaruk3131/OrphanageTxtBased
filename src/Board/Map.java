@@ -1,8 +1,10 @@
 package Board;
 
 public class Map {
-    public int xLoc;
-    public int yLoc;
+    int xLoc;
+    int yLoc;
+    String name;
+
 
 
 

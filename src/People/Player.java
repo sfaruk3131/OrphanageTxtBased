@@ -1,6 +1,7 @@
 package People;
 
 public class Player {
+    public String name;
     public int hP;
     public int sttk;
     public int xLoc, yLoc;
@@ -25,10 +26,11 @@ public class Player {
         this.yLoc = yLoc;
     }
 
-    public void Person (String firstName,int xLoc, int yLoc)
+    public Player (String name,int xLoc, int yLoc)
     {
         this.xLoc = xLoc;
         this.yLoc = yLoc;
+        this.name = name;
     }
 
 

@@ -6,7 +6,7 @@ import People.Player;
 import java.util.Scanner;
 
 public class Runner {
-    public static Map[][] layOut;
+    public static Map[][] layOut = null;
     boolean gameOn = true;
     boolean fight = false;
     boolean run = false;
@@ -21,18 +21,18 @@ public class Runner {
             System.out.println("Do you want a small, medium, or a large board? Remember the larger the board the more difficult.");
 
             String answer = in.nextLine();
-            if(answer.toLowerCase().contains("small"))
+            if(answer.toLowerCase().equals("small"))
             {
                 layOut = new layOut[4][4];
                 pChoice = true;
 
             }
-            if(answer.toLowerCase().contains("medium"))
+            if(answer.toLowerCase().equals("medium"))
             {
                 layOut = new layOut[5][5];
                 pChoice = true;
             }
-            if(answer.toLowerCase().contains("large"))
+            if(answer.toLowerCase().equals("large"))
             {
                 layOut = new layOut[6][6];
                 pChoice = true;
