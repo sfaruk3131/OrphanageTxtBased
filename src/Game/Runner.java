@@ -10,6 +10,7 @@ public class Runner {
     boolean gameOn = true;
     boolean fight = false;
     boolean run = false;
+    int clues = 5;
 
     public static void main(String[] args)
     {
@@ -23,18 +24,18 @@ public class Runner {
             String answer = in.nextLine();
             if(answer.toLowerCase().equals("small"))
             {
-                layOut = new layOut[4][4];
+                layOut = new Map[4][4];
                 pChoice = true;
 
             }
             if(answer.toLowerCase().equals("medium"))
             {
-                layOut = new layOut[5][5];
+                layOut = new Map[5][5];
                 pChoice = true;
             }
             if(answer.toLowerCase().equals("large"))
             {
-                layOut = new layOut[6][6];
+                layOut = new Map[6][6];
                 pChoice = true;
             }
         }
@@ -64,6 +65,36 @@ public class Runner {
             }
         }
         System.out.println("In order to move type in n,s,e,w for North,South,East ,and West respectively");
+
+        for(int x = 0; x < layOut.length; x++)
+        {
+            for(int y = 0; y < layOut[x].length; y++ )
+            {
+                if(eSpawn == 2) {
+                    layOut[x][y] = new Map(x, y,2);
+                }
+                else if(eSpawn == 3)
+                {
+                    layOut[x][y] = new Map(x, y,3);
+                }
+                else
+                {
+                    layOut[x][y] = new Map(x,y,4);
+                }
+            }
+        }
+
+        boolean con = false;
+        while(!con)
+        {
+            System.out.println("Please pick a character: Investigator or Sister. Enter the character name.");
+            String a = in.nextLine();
+            if(a.equalsIgnoreCase("investigator"))
+            {
+                System.out.println("");
+            }
+        }
+
 
 
     }
