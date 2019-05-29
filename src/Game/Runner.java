@@ -1,7 +1,9 @@
 package Game;
 
 import Board.Map;
+import People.Detective;
 import People.Player;
+import People.Sister;
 
 import java.util.Scanner;
 
@@ -64,7 +66,7 @@ public class Runner {
                 pChoice = false;
             }
         }
-        System.out.println("In order to move type in n,s,e,w for North,South,East ,and West respectively");
+        System.out.println("In order to move type in n,s,e,w for North, South, East, and West respectively");
 
         for(int x = 0; x < layOut.length; x++)
         {
@@ -85,15 +87,38 @@ public class Runner {
         }
 
         boolean con = false;
-        while(!con)
+        while(con == false)
         {
             System.out.println("Please pick a character: Investigator or Sister. Enter the character name.");
             String a = in.nextLine();
             if(a.equalsIgnoreCase("investigator"))
             {
-                System.out.println("");
+                System.out.println("You are investigating a case of missing children ,and find a particular orphanage suspicious.");
+                System.out.println("Attack: " + Detective.attk);
+                System.out.println("Defense: " + Detective.def);
+                System.out.println("Hp: " + Detective.hp);
+                System.out.println("Are you sure you would like to choose investigator? Yes or no?");
+                String b = in.nextLine();
+                if(b.equalsIgnoreCase("yes"))
+                {
+                    con = true;
+                }
+            }
+            else
+            {
+                System.out.println("You are a new Sister that have been working at a new orphanage for the last few months.");
+                System.out.println("Attack: " + Sister.attk);
+                System.out.println("Defense: " + Sister.def);
+                System.out.println("Hp: " + Sister.hp);
+                System.out.println("Are you sure you would like to choose sister? Yes or no?");
+                String c = in.nextLine();
+                if(c.equalsIgnoreCase("yes"))
+                {
+                    con = true;
+                }
             }
         }
+
 
 
 
